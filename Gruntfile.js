@@ -1,5 +1,4 @@
 module.exports = function(grunt){
-    var mozjpeg = require('imagemin-mozjpeg');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.initConfig({
           imagemin: {                          // Task 
