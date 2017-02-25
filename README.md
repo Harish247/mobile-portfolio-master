@@ -32,5 +32,5 @@
 2. Moved dx caluculation out from the loop which is consuming lot of time. Caluculating dx for first pizza element and using it for all pizza elements.
 
 ####References
-1. Udacitu forums 
+1. Udacity forums 
 
