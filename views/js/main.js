@@ -452,9 +452,9 @@ var resizePizzas = function(size) {
   // moving dx out of for loop for optimize performance
   function changePizzaSizes(size) {
     var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
-    var dx = determineDx(randomPizzas, size);
+    var dx = determineDx(randomPizzas[0], size);
+    var newwidth = (randomPizzas[0].offsetWidth + dx) + 'px';
     for (var i = 0; i < randomPizzas.length; i++) {
-      var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';
       randomPizzas[i].style.width = newwidth;
     }
   }
@@ -529,9 +529,11 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  //reduce the elements size to improve the performance. 20 looks good on scree.
-  for (var i = 0; i < 20; i++) {
-    var elem = document.createElement('img');
+  var noOfPizzas = (window.innerHeight/256)*cols;
+  var elem;
+  //reduce the elements size to improve the performance. Getting the elements depends on the height of the window. 
+  for (var i = 0; i <=noOfPizzas; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
